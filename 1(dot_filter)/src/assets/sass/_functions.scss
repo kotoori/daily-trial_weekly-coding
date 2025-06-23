@@ -1,0 +1,14 @@
+@use "sass:math";
+@use "sass:map";
+
+@function vw($px, $width: 375) {
+  @return math.div($px, $width) * 100vw;
+}
+
+@function rem($pxSize) {
+  @return math.div($pxSize, 16) * 1rem;
+}
+
+@function ls($size) {
+  @return #{ math.div($size, 1000) }em;
+}
