@@ -1,6 +1,6 @@
 //ブレークポイント
 $pc-width: 1024px; // PCサイズ
-$tab-width: 600px; // タブレットサイズ
+$tab-width: 768px; // タブレットサイズ
 
 $breakpoints: (
   'sp': 'screen and (max-width: #{$tab-width - 1px})',//スマホ幅

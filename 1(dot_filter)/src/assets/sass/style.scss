@@ -6,7 +6,7 @@
 @use "base";
 
 body{
-	margin-block-end: 50px;
+	margin-block: 50px;
 }
 img,video{
 	width: 100%;
@@ -16,7 +16,7 @@ img,video{
 
 .inner{
 	width: 100%;
-	max-width: 800px;
+	max-width: 1280px;
 	padding-inline: 30px;
 	margin-inline: auto;
 	margin-block-start: 50px;
@@ -25,12 +25,22 @@ img,video{
 	}
 }
 
+.grid{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	gap: 50px 25px;
+	@include mq(sp){
+		grid-template-columns: 1fr;
+	}
+}
+
 .sample{
-	margin-block-start: 50px;
 	width: 100%;
 }
 
-.dot-filter{
+.dot-filter,
+.dot-filter2{
 	position: relative;
 	&::after{
 		content: "";
@@ -41,9 +51,21 @@ img,video{
 		left: 0;
 		top: 0;
 		z-index: 10;
-		background-image: radial-gradient(circle, rgba(124, 68, 0, 0.6) 1px, transparent 1px),
-											radial-gradient(circle, rgba(124, 68, 0, 0.6) 1px, transparent 1px);
 		background-size: 4px 4px;
 		background-position: 0 0, 2px 2px;
+	}
+}
+
+.dot-filter{
+	&::after{
+		background-image: radial-gradient(circle, rgba(124, 68, 0, 0.6) 1px, transparent 1px),
+		radial-gradient(circle, rgba(124, 68, 0, 0.6) 1px, transparent 1px);
+	}
+}
+
+.dot-filter2{
+	&::after{
+		background-image: radial-gradient(circle, rgba(0, 45, 118, 0.6) 1px, transparent 1px),
+		radial-gradient(circle, rgba(0, 45, 118, 0.6) 1px, transparent 1px);
 	}
 }
