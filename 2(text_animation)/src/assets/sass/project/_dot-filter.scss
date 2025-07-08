@@ -1,0 +1,31 @@
+.dot-filter,
+.dot-filter2{
+	position: relative;
+	&::after{
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 10;
+		background-size: 4px 4px;
+		background-position: 0 0, 2px 2px;
+	}
+}
+
+
+.dot-filter{
+	&::after{
+		background-image: radial-gradient(circle, rgba(124, 68, 0, 0.6) 1px, transparent 1px),
+		radial-gradient(circle, rgba(124, 68, 0, 0.6) 1px, transparent 1px);
+	}
+}
+
+.dot-filter2{
+	&::after{
+		background-image: radial-gradient(circle, rgba(0, 45, 118, 0.6) 1px, transparent 1px),
+		radial-gradient(circle, rgba(0, 45, 118, 0.6) 1px, transparent 1px);
+	}
+}

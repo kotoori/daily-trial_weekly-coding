@@ -1,0 +1,92 @@
+
+.text-anime{
+  padding: 0.2em 0.5em;
+  width: fit-content;
+  white-space: nowrap;
+  position: relative;
+  color: transparent;
+  animation: text-display 2s ease-in-out 1s forwards;
+  overflow: hidden;
+
+  &:not(:first-child){
+    margin-top: 0.5em;
+  }
+
+  &::before,&::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+  }
+  &::before{
+    transform-origin: left;
+    animation-name: bar-in;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    opacity: 0;
+  }
+  &::after{
+    scale: 0 1;
+    transform-origin: right;
+    animation-name: bar-out;
+    animation-duration: 1s;
+    animation-delay: 1.9s;
+    opacity: 0;
+  }
+}
+
+@keyframes text-display{
+  0%{
+    color: transparent;
+  }
+  49%{
+    color: transparent;
+  }
+  50%{
+    color: #FFF;
+  }
+  100%{
+    color: #FFF;
+  }
+}
+
+@keyframes bar-in{
+  0%{
+    scale: 0 1;
+    opacity: 1;
+  }
+  50%{
+    scale: 1 1;
+    opacity: 1;
+  }
+  51%{
+    scale: 0 1;
+    opacity: 0;
+  }
+  100%{
+    scale: 0 1;
+    opacity: 0;
+  }
+}
+
+@keyframes bar-out{
+  0%{
+    scale: 1 1;
+    opacity: 0;
+  }
+  1%{
+    opacity: 1;
+    scale: 1 1;
+  }
+  50%{
+    scale: 1 1;
+    opacity: 1;
+  }
+  100%{
+    scale: 0 1;
+    opacity: 1;
+  }
+}

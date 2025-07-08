@@ -1,0 +1,22 @@
+.box-wrap{
+  position: relative;
+}
+
+.text-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  max-width: 90%;
+  padding: 100px 100px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 4px 4px 8px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: bold;
+}

@@ -1,0 +1,33 @@
+@use "sass:map";
+@use "../global" as *;
+
+body{
+	margin-block: 50px;
+}
+img,video{
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.inner{
+	width: 100%;
+	max-width: 1280px;
+	padding-inline: 30px;
+	margin-inline: auto;
+	margin-block-start: 50px;
+	@include mq(sp){
+		padding: 0 20px;
+	}
+}
+
+.grid{
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-content: center;
+	gap: 50px 25px;
+}
+
+.sample{
+	width: 100%;
+}

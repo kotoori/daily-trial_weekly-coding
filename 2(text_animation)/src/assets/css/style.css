@@ -1,0 +1,314 @@
+@charset "UTF-8";
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, div, span, img, a, table, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+header, footer, nav, section, article, main, aside, figure, figcaption {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #111;
+  background: #FFF;
+  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: top; /* img下の隙間を消す */
+}
+
+a, button, [role=tab] {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+address {
+  font-style: normal;
+}
+
+/* スクリーンリーダーオンリー */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body {
+  margin-block: 50px;
+}
+
+img, video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1280px;
+  padding-inline: 30px;
+  margin-inline: auto;
+  -webkit-margin-before: 50px;
+          margin-block-start: 50px;
+}
+@media screen and (max-width: 767px) {
+  .inner {
+    padding: 0 20px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 50px 25px;
+}
+
+.sample {
+  width: 100%;
+}
+
+.dot-filter,
+.dot-filter2 {
+  position: relative;
+}
+.dot-filter::after,
+.dot-filter2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px;
+}
+
+.dot-filter::after {
+  background-image: radial-gradient(circle, rgba(124, 68, 0, 0.6) 1px, transparent 1px), radial-gradient(circle, rgba(124, 68, 0, 0.6) 1px, transparent 1px);
+}
+
+.dot-filter2::after {
+  background-image: radial-gradient(circle, rgba(0, 45, 118, 0.6) 1px, transparent 1px), radial-gradient(circle, rgba(0, 45, 118, 0.6) 1px, transparent 1px);
+}
+
+.box-wrap {
+  position: relative;
+}
+
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 90%;
+  padding: 100px 100px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-box-shadow: 4px 4px 8px 0 rgba(255, 255, 255, 0.5);
+          box-shadow: 4px 4px 8px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.text-anime {
+  padding: 0.2em 0.5em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  white-space: nowrap;
+  position: relative;
+  color: transparent;
+  -webkit-animation: text-display 2s ease-in-out 1s forwards;
+          animation: text-display 2s ease-in-out 1s forwards;
+  overflow: hidden;
+}
+.text-anime:not(:first-child) {
+  margin-top: 0.5em;
+}
+.text-anime::before, .text-anime::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+}
+.text-anime::before {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-animation-name: bar-in;
+          animation-name: bar-in;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  opacity: 0;
+}
+.text-anime::after {
+  scale: 0 1;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-animation-name: bar-out;
+          animation-name: bar-out;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 1.9s;
+          animation-delay: 1.9s;
+  opacity: 0;
+}
+
+@-webkit-keyframes text-display {
+  0% {
+    color: transparent;
+  }
+  49% {
+    color: transparent;
+  }
+  50% {
+    color: #FFF;
+  }
+  100% {
+    color: #FFF;
+  }
+}
+
+@keyframes text-display {
+  0% {
+    color: transparent;
+  }
+  49% {
+    color: transparent;
+  }
+  50% {
+    color: #FFF;
+  }
+  100% {
+    color: #FFF;
+  }
+}
+@-webkit-keyframes bar-in {
+  0% {
+    scale: 0 1;
+    opacity: 1;
+  }
+  50% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  51% {
+    scale: 0 1;
+    opacity: 0;
+  }
+  100% {
+    scale: 0 1;
+    opacity: 0;
+  }
+}
+@keyframes bar-in {
+  0% {
+    scale: 0 1;
+    opacity: 1;
+  }
+  50% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  51% {
+    scale: 0 1;
+    opacity: 0;
+  }
+  100% {
+    scale: 0 1;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes bar-out {
+  0% {
+    scale: 1 1;
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+    scale: 1 1;
+  }
+  50% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 0 1;
+    opacity: 1;
+  }
+}
+@keyframes bar-out {
+  0% {
+    scale: 1 1;
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+    scale: 1 1;
+  }
+  50% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 0 1;
+    opacity: 1;
+  }
+}
