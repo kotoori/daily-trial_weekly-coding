@@ -156,6 +156,7 @@ img, video {
           backdrop-filter: blur(5px);
   -webkit-box-shadow: 4px 4px 8px 0 rgba(255, 255, 255, 0.5);
           box-shadow: 4px 4px 8px 0 rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
   color: #fff;
   font-size: 36px;
   line-height: 1;
@@ -173,6 +174,18 @@ img, video {
   -webkit-animation: text-display 2s ease-in-out 1s forwards;
           animation: text-display 2s ease-in-out 1s forwards;
   overflow: hidden;
+}
+.text-anime.--delay-1 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.text-anime.--delay-2 {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+.text-anime.--delay-3 {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
 }
 .text-anime:not(:first-child) {
   margin-top: 0.5em;
@@ -208,6 +221,30 @@ img, video {
   -webkit-animation-delay: 1.9s;
           animation-delay: 1.9s;
   opacity: 0;
+}
+.text-anime.--delay-1::before {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.text-anime.--delay-1::after {
+  -webkit-animation-delay: 1.9s;
+          animation-delay: 1.9s;
+}
+.text-anime.--delay-2::before {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+.text-anime.--delay-2::after {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+.text-anime.--delay-3::before {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+.text-anime.--delay-3::after {
+  -webkit-animation-delay: 2.3s;
+          animation-delay: 2.3s;
 }
 
 @-webkit-keyframes text-display {
